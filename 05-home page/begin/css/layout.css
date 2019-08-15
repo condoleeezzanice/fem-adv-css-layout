@@ -1,5 +1,19 @@
 /* grid system -- mobile first! */
 
+main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    --columns: 16;
+}
+
+section {
+[class*="col-"] {
+	--width: 4;
+  --initialbasis: calc(var(--width) / var(--columns) * 100%);
+  --gap: calc((var(--columns) - var(--width)) * 1%);
+  flex-basis: calc(var(--initialbasis) - var(--gap));
+}
 
 
 
